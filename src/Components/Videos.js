@@ -8,10 +8,10 @@ import ChannelCard from './ChannelCard'
 
 const Videos = () => {
     const {state:{data}}=useContext(AppContext)
-  // console.log(data)
+  console.log(data)
   return (
     <div>
-        <Stack direction='row' flexWrap='wrap' justifyContent="start" alignItems="start" p={6}>
+        <Stack direction='row' flexWrap='wrap' justifyContent="start" alignItems="start" p={4}>
             {data.map((item,index)=>{return <>
                 <Box key={index} >
                      {item.id.videoId &&<VideoCard video={item} />}

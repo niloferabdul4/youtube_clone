@@ -8,7 +8,7 @@ const AppContextProvider = ({children}) => {
       singleVideoDetails:null,
       channelVideos:[],
       relatedVideos:[],
-      selectedMenu:'Home'
+      selectedMenu:'New'
     }
     const [state,dispatch]=useReducer(reducer,initialState)
   return (

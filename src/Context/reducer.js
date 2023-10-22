@@ -9,6 +9,8 @@ const reducer=(state,action)=>{
         case 'LOAD_CHANNEL_VIDEOS':
                
                 return {...state,channelVideos:action.payload}
+        case 'SELECT_MENU':
+              return {...state,selectedMenu:action.payload}
         default:
             return state
     }

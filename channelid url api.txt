@@ -1,11 +1,13 @@
 For Channels:
 
-https://www.googleapis.com/youtube/v3/search?key=AIzaSyDDMNEirsf8WtNERsYvDMYL6XsF7dnRxlQ&channelId=UCOE7gG5Xnxd_kEkcn78YB2A&part=snippet,id&order=date&maxResults=20
+https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=UC_x5XG1OV2P6uZZ5FSM9Ttw&key=AIzaSyCc607gH3CuMyOE_8c7lPFGxPCzjL2dv9A
+
 
 
 search
 
-https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&q=entertainment%20&regionCode=IN&key=AIzaSyDDMNEirsf8WtNERsYvDMYL6XsF7dnRxlQ
+https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=15&q=entertainment%20&regionCode=IN&key=AIzaSyCc607gH3CuMyOE_8c7lPFGxPCzjL2dv9A
 
+videos
 
-https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails&maxResults=15&myRating=none&key=AIzaSyDDMNEirsf8WtNERsYvDMYL6XsF7dnRxlQ
+https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails&maxResults=15&myRating=none&key=AIzaSyCc607gH3CuMyOE_8c7lPFGxPCzjL2dv9A

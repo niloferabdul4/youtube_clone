@@ -7,28 +7,34 @@ import VideoCard from '../Components/VideoCard'
 
 
 const ChannelDetails = () => {
-    const {state:{data}}=useContext(AppContext)
-    console.log(data)
-   
+    const {state:{data,channelVideos},dispatch}=useContext(AppContext)
+   // console.log(data)
+   const {id}=useParams()
+    useEffect(()=>{ 
+      fetch(`https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=${id}&key=AIzaSyCc607gH3CuMyOE_8c7lPFGxPCzjL2dv9A`)
+          .then(res=>res.json())
+          .then(res=>{
+            dispatch({type:'LOAD_CHANNEL_VIDEOS',payload:res.items})  
+            
+         
+})
+},[id])
+console.log(channelVideos)
   return (
     <div>
         
-        <Stack >
-          
-              <Box>
-                  <div style={{background: 'linear-gradient(#e66465, #9198e5)',height:'300px'}}/>
-                  <ChannelCard channel={data[0]}  />
+        <Stack pl={20}>          
+              <Box >                  
+                  <ChannelCard channel={channelVideos[0]} />
               </Box>
-            
+              <Box sx={{display:'flex', flexWrap:'wrap',flexDirection:'row',gap:'10',height:{sx:'auto',md:'92vh'}}} >
+                  {data.filter(item=>item.id?.videoId).map(filteredItem=>{return <>                  
+                    <VideoCard video={filteredItem} />
                 
-                         {data.filter(item=>item.id.videoId).map(filteredItem=>{return <>
-                          <Box p={2} display="flex">
-    
-                             <VideoCard video={filteredItem}/>
-               
-                       </Box>
-                         
-                         </>})}
+                </>})}
+              </Box>
+                
+                        
    
              </Stack>
     </div>

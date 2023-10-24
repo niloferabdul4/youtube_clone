@@ -3,19 +3,24 @@ import { AppContext } from '../Context/AppContextProvider'
 import Sidebar from '../Components/Sidebar'
 import { Stack,Box, Typography} from '@mui/material'
 import Videos from '../Components/Videos'
-
-
+import { fetchFromApi } from '../Utils/fetchFromApi'
+import axios from 'axios'
 const Home = () => {
   const {state:{selectedMenu},dispatch}=useContext(AppContext)
   
+ /*
    useEffect(()=>{ 
-            fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&tags&maxResults=15&q=${selectedMenu}%20&regionCode=IN&key=AIzaSyCc607gH3CuMyOE_8c7lPFGxPCzjL2dv9A`)
-                .then(res=>res.json())
-                .then(res=>{
-                  dispatch({type:'LOAD_DATA',payload:res.items})  
+                fetchFromApi(`search?part=snippet&q=${selectedMenu}`)
+               .then(response=>response.json())
+               .then(response=> dispatch({type:'LOAD_DATA',payload:response.items}))
+                
+                
                   
-               
-   })
+},[selectedMenu])
+*/
+useEffect(()=>{
+ fetchFromApi(`search?part=snippet&q=${selectedMenu}`) 
+ .then((data)=>dispatch({type:'LOAD_DATA',payload:data.items}))
 },[selectedMenu])
 
   return (

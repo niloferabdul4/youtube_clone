@@ -5,36 +5,41 @@ import Sidebar from '../Components/Sidebar'
 import { Box, Card, CardContent, CardMedia, Stack, Typography } from '@mui/material'
 
 const VideoDetails = () => {
-    const{state:{data,singleVideoDetails},dispatch}=useContext(AppContext)
+    const{state:{dataByCategory,data,singleVideoDetails,relatedVideos},dispatch}=useContext(AppContext)
     const {id}=useParams()
     
-   // console.log(data)
+   console.log(data)
 
     useEffect(()=>{
-        const details=data?.find(item=>(item.id.videoId)===(id))
-       const relatedVideos=[];
+        const details=dataByCategory?.find(item=>(item.id.videoId)===(id))
+       //const relatedVideos=[];
         dispatch({type:'LOAD_VIDEO_DETAILS',payload:details})
+      //console.log(details)
+   
+        const currentVideoTags=data.filter(item=>(item.id.videoId)===id? (item.snippet.tags.split(' ')):'')
+        console.log(currentVideoTags)
       /*
-       //const currentKeywords=details.snippet.title.split(' ')
-      console.log(currentKeywords.length)
-      
         for(let i=0;i<data.length;i++)
         {
         
-          for(let j=0;j<currentKeywords.length;j++)
+          for(let j=0;j<currentTags.length;j++)
           {
-            if((data[i].title).split(' ')===currentKeywords[j])
+            if((data[i]?.snippet?.title.split(' ')).includes(currentTags[j]))
             {
-                   relatedVideos.push(data[i])
+                   
+              console.log(data[i].snippet?.title.split(' '))
+              relatedVideos.push(data[i])
+                   
             }
           }
-          return relatedVideos
+         
         }
+        dispatch({type:'LOAD_RELATED_VIDEOS',payload:relatedVideos}) 
         console.log(relatedVideos)
      */
        // const relatedVideos=data.filter(element => currentVideoTags.includes(element.snippet.tags));        
         //console.log(relatedVideos)
-       
+      
      
     },[id])
 
@@ -42,7 +47,7 @@ const VideoDetails = () => {
     <>
 
        <Stack sx={{flexDirection:{sx:'column-reverse',md:'row'}}}>
-        <Box sx={{flex:'1',p:10}}>
+        <Box sx={{flex:'0.6',p:10}}>
           <Card sx={{boxShadow:'none'}}>
 
              <CardMedia>
@@ -57,7 +62,7 @@ const VideoDetails = () => {
          </iframe>
               </CardMedia> 
               <CardContent sx={{width:'500',height:'100'}}>
-              <Typography variant='h5'>
+              <Typography variant='subHeading1'>
                      {singleVideoDetails?.snippet.title}
                 </Typography>
                 <Typography variant='body1'>
@@ -69,8 +74,32 @@ const VideoDetails = () => {
                
           
         </Box>
-        <Box>
-          Related Videos
+        <Box sx={{flex:0.4,alignItems:'flex-start',p:10}}>
+           <Typography variant='h5' fontWeight='bold'>
+            Related Videos
+           </Typography>
+          
+           <Stack direction='row' sx={{overflowY:'auto', 
+                                        height:{sx:'auto',md:'95%'},
+                                        flexDirection:{md:'column'}}}>
+               <Stack direction='row' >
+                {relatedVideos?.map(item=>{return <>
+                  <CardMedia sx={{height:140, width:200,mr:3,mt:3}}image={item?.snippet?.thumbnails.default.url} alt='' />
+                    <CardContent sx={{height:140, width:400,g:10}} >
+                      <Typography variant='subHeading2'>
+                        {item?.snippet?.title.slice(0,60)}
+                      </Typography>
+                      <Typography variant='body1'>
+                        {item?.snippet?.channelTitle}
+                      </Typography>
+                     
+                    </CardContent>
+                  </>})}
+               </Stack>
+                
+            
+                   
+           </Stack>
         </Box>
         </Stack>     
      

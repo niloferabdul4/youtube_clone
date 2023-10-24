@@ -2,31 +2,32 @@ import React from 'react'
 import { Card,CardMedia,CardContent,Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { CheckCircle } from '@mui/icons-material'
+import { demoThumbnailUrl,demoChannelTitle,demoChannelUrl,demoVideoUrl,demoVideoTitle } from '../Utils/Utils'
 const VideoCard = ({video:{id,snippet}}) => {
  
   return (
     <div>
-      <Card  sx={{ width: { xs: '100%', sm: '358px', md: "350px", }, boxShadow: "none", borderRadius: '20px',mr:3 }}>
-            <Link to={ `/videos/${id.videoId}`} >
-            <CardMedia sx={{ width: { xs: '100%', sm: '358px'}, height: 200,borderRadius:'20px' }} 
+      <Card  sx={{ width: { xs: '100%', sm: '358px', md: "320px", }, boxShadow: "none", borderRadius: '0',mr:3 }}>
+            <Link to={id.videoId? ( `/videos/${id.videoId}`) : (`/videos/4-Yv4PzseHU?si=SAnN_yVqU8pItNyz`)} >
+            <CardMedia sx={{ width: { xs: '100%', sm: '358px'}, height: 180 }} 
                             component="img"
                             alt={`${snippet?.title}`}
-                            image={snippet?.thumbnails?.high?.url  } 
+                            image={id.videoId? (snippet?.thumbnails?.high?.url) : demoThumbnailUrl  } 
             />
             </Link>
 
             <CardContent sx={{height:180}}>
-               <Link to={ `/videos/${id.videoId}`} >
+               <Link to={ id.videoId? (`/videos/${id.videoId}`): demoVideoUrl} >
                     <Typography variant='subHeading' component='div' >
-                    {snippet?.title.slice(0,50)}...
+                    {snippet?.title.slice(0,50) || demoVideoTitle}
                     </Typography>
                 </Link>
-                
-                    <Typography variant="subtitle2" color="gray">
+                <Link to={snippet?.channelId? (`/channel/${snippet?.channelId}`):demoChannelUrl}>
+                    <Typography variant="subTitle4" color="#808080">
                       {snippet?.channelTitle}
                       <CheckCircle sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
                     </Typography>
-              
+                 </Link>
             </CardContent>
            
  </Card>

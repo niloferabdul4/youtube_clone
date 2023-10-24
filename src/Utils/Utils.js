@@ -3,24 +3,32 @@ import HomeIcon from '@mui/icons-material/Home';
 import CodeIcon from '@mui/icons-material/Code';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
-import SchoolIcon from '@mui/icons-material/School';
-import FaceRetouchingNaturalIcon from '@mui/icons-material/FaceRetouchingNatural';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
-
+import JavascriptIcon from '@mui/icons-material/Javascript';
 import ThumbUpOffAltOutlinedIcon from '@mui/icons-material/ThumbUpOffAltOutlined';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
+
+
 export const menuItems = [
-  { name: 'New', icon: <HomeIcon />, },
-  { name: 'NilasCuisine', icon: <CodeIcon />, },
-  { name: 'Coding', icon: <CodeIcon />, },
-  { name: 'ReactJS', icon: <CodeIcon />, },
-  { name: 'Javascript', icon: <CodeIcon />, },
-  { name: 'Education', icon: <SchoolIcon />, },
-  { name: 'Sports', icon: <SportsEsportsIcon />, },
+  { name: 'Most Popular', icon: <HomeIcon /> },
+  { name: "NilasCuisine", icon: <CodeIcon /> },
+  { name: "Bright Side", icon: <CodeIcon />, },
+  { name: 'Html', icon: <CodeIcon /> },
+  { name: 'Javascript', icon:<CodeIcon /> },
+  { name: 'ReactJS', icon: <CodeIcon />}, 
+  { name: 'Sports', icon: <SportsEsportsIcon /> },
+  { name: 'Music', icon: <MusicNoteIcon />},
   {name:'Entertainment',icon:<LiveTvIcon/>},
-  { name: 'Fashion', icon: <CheckroomIcon />, },
+  { name: 'Fashion', icon: <CheckroomIcon /> },
   {name:'Liked Videos',icon:<ThumbUpOffAltOutlinedIcon/>},
-  {name:'Logout',icon:<ExitToAppIcon/>,path:'/'}
+  {name:'Logout',icon:<ExitToAppIcon/>}
 
 ];
+
+export const demoThumbnailUrl = 'https://i.ibb.co/G2L2Gwp/API-Course.png';
+export const demoChannelUrl = '/channel/UCOE7gG5Xnxd_kEkcn78YB2A';
+export const demoVideoUrl = '/video/4-Yv4PzseHU?si=SAnN_yVqU8pItNyz';
+export const demoChannelTitle = 'Nilas Cuisine';
+export const demoVideoTitle = "10 REFRESHING WELCOME DRINKS / Iftar Special / NILA'S CUISINE";
+export const demoProfilePicture = 'https://yt3.googleusercontent.com/ytc/APkrFKZ7egsDcPMioDUZ094fIn_P-ApyQtlsm1_tGUOT=s900-c-k-c0x00ffffff-no-rj'

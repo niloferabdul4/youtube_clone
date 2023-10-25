@@ -5,6 +5,7 @@ import { Stack,Box, CardMedia,Card,CardContent,Typography } from '@mui/material'
 import ChannelCard from '../Components/ChannelCard'
 import VideoCard from '../Components/VideoCard'
 import { fetchFromApi } from '../Utils/fetchFromApi'
+import Sidebar from '../Components/Sidebar'
 
 
 const ChannelDetails = () => {
@@ -28,11 +29,10 @@ const ChannelDetails = () => {
     fetchFromApi(`search?channelId=${id}&part=snippet%2Cid&order=date&maxResults=50`)
     .then((data)=>dispatch({type:'LOAD_CHANNEL_VIDEOS',payload:data.items}))
    },[id])
-   console.log(channelDetails)
-   console.log(channelVideos)
+
   return (
     <div>
-        
+      
         <Box minHeight="95vh" >           
               <Box>  
                   <div style={{
@@ -40,10 +40,10 @@ const ChannelDetails = () => {
                   background: 'linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)',
                   zIndex: 10,
                 }} />                
-                  <ChannelCard channel={channelDetails} marginTop='-95px' />
+                  <ChannelCard channel={channelDetails} marginTop='-125px' />
               </Box>
-              <Box pl={10} pt={2}>             
-                  <Box sx={{display:'flex', flexWrap:'wrap',flexDirection:'row',gap:'10',height:{sx:'auto',md:'92vh'}}} >
+              <Box pl={{sx:0,md:8}}>             
+                  <Box sx={{display:'flex', flexWrap:'wrap',flexDirection:'row',gap:'10px',height:{sx:'auto',md:'92vh'}}} >
                       {channelVideos?.map(video=>{return <>                  
                         <VideoCard video={video} />
                     

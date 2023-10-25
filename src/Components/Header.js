@@ -8,7 +8,7 @@ const Header = () => {
     <>
  
 
-  <Stack direction='row' alignItems='center' justifyContent='space-between' p={2} sx={{position:'sticky',top:0,justifyContent:'space-between'}} >
+  <Stack direction='row' alignItems='center' justifyContent='space-between' p={2} sx={{position:'sticky',top:0,justifyContent:'space-between',zIndex:'100',backgroundColor:'whitesmoke'}} >
        <Box sx={{flexDirection:'row'}}>
            <img src='/assets/logo1.png' alt='' height={45} />
              
@@ -16,9 +16,14 @@ const Header = () => {
        <Box>
            <Paper component='form' 
                   onSubmit={()=>{}}
-                  sx={{width:{sx:100,md:500},boxShadow:'none',flexDirection:'row',justifyContent:'space-between',border:'1px solid #e3e3e3',borderRadius:20,pl:2,flex:'1'}}>
+                  sx={{width:{sx:100,md:500},
+                  boxShadow:'none',
+                  flexDirection:'row',
+                  justifyContent:'space-between',
+                  border:'1px solid #e3e3e3',
+                  borderRadius:20,pl:12,flex:'1'}}>
                  <input type='text' placeholder='Search' style={{border:'none'}} alt='' onChange={()=>{}} />
-                 <IconButton type='submit' sx={{p:'10px'}}>
+                 <IconButton type='submit' sx={{p:'7px'}}>
                        <Search />
                  </IconButton>
                 

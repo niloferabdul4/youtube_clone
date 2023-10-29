@@ -4,14 +4,18 @@ export const AppContext=createContext()
 
 const AppContextProvider = ({children}) => {
     const initialState={
-      data:[],
+      videos:[],
       singleVideoDetails:null,
       channelVideos:[],
       channelDetails:[],
       relatedVideos:[],
-      selectedMenu:'React Js'
+      selectedMenu:'New',
+      searchText:'',
+      filteredVideos:[],
+    
     }
     const [state,dispatch]=useReducer(reducer,initialState)
+
   return (
     <>
       <AppContext.Provider value={{state,dispatch}}>

@@ -16,6 +16,7 @@ const Sidebar = () => {
   return (
     <>
             <Stack direction='row' sx={{overflowY:'auto', 
+                                        p:{xs:2,sm:2},
                                         height:{sx:'auto',md:'95%'},
                                         flexDirection:{md:'column'}}}>
                       {menuItems.map(item=>{return <>            
@@ -24,7 +25,7 @@ const Sidebar = () => {
                                             onClick={()=>handleClick(item)}
                                             >
                                       
-                                            <span style={{marginRight:'15px'}}>{item.icon}</span>
+                                            <span style={{marginRight:'8px'}}>{item.icon}</span>
                                             <p style={{opacity:item.name===selectedMenu ? '1' :'0.75'}}>{item.name}</p>
                                         
                                         </button>            

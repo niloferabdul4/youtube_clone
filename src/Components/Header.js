@@ -1,40 +1,48 @@
-import React from 'react'
-import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
-import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
-import { Box, IconButton, Paper, Stack } from '@mui/material';
+import React,{useContext} from 'react'
+import { Box, IconButton, Paper, Stack,Avatar } from '@mui/material';
 import { Search } from '@mui/icons-material';
+import { AppContext } from '../Context/AppContextProvider';
+import { fetchFromApi } from '../Utils/fetchFromApi';
+
+
 const Header = () => {
+  const {state:{searchText},dispatch}=useContext(AppContext)
+
+  const handleSubmit=(event)=>{
+    event.preventDefault();
+    fetchFromApi(`search?part=snippet&q=${searchText}`) 
+   .then((data)=>dispatch({type:'LOAD_FILTERED_VIDEOS',payload:data.items}))
+  
+  
+  }
+
+
   return (
     <>
  
 
-  <Stack direction='row' alignItems='center' justifyContent='space-between' p={2} sx={{position:'sticky',top:0,justifyContent:'space-between',zIndex:'100',backgroundColor:'whitesmoke'}} >
+  <Stack direction='row' alignItems='center' sx={{position:'sticky',px:4,py:2,top:0,justifyContent:'space-between',zIndex:'100',backgroundColor:'whitesmoke'}} >
        <Box sx={{flexDirection:'row'}}>
-           <img src='/assets/logo1.png' alt='' height={45} />
+           <Avatar src='/assets/logo1.png' alt=''height={40} />
              
        </Box>
-       <Box>
+       <Box >
            <Paper component='form' 
-                  onSubmit={()=>{}}
-                  sx={{width:{sx:100,md:500},
+                  onSubmit={handleSubmit}
+                  sx={{
                   boxShadow:'none',
                   flexDirection:'row',
                   justifyContent:'space-between',
+                  pl:2,
                   border:'1px solid #e3e3e3',
-                  borderRadius:20,pl:12,flex:'1'}}>
-                 <input type='text' placeholder='Search' style={{border:'none'}} alt='' onChange={()=>{}} />
-                 <IconButton type='submit' sx={{p:'7px'}}>
+                  borderRadius:20}}>
+                 <input type='text' placeholder='Search...'  className='search-bar' alt='' onChange={(event)=>{dispatch({type:'SEARCH_TEXT',payload:event.target.value})}} />
+                 <IconButton type='submit' sx={{p:{m:'10px',sm:'2px',xs:'1px'}}}>
                        <Search />
                  </IconButton>
                 
            </Paper>
-       </Box>
-       <Box sx={{gap:10}}>
-               <span><NotificationsNoneIcon /></span>
-                <span><AppsOutlinedIcon /> </span>
-                <span><img src='assets/profilePic.png' alt='' height={40}/></span>
-       </Box>
-
+        </Box>
   </Stack>
   </>
   )

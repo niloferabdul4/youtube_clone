@@ -7,13 +7,13 @@ import ChannelCard from './ChannelCard'
 //import ChannelCard from './ChannelCard'
 
 const Videos = () => {
-    const {state:{data}}=useContext(AppContext)
+    const {state:{videos}}=useContext(AppContext)
  //console.log(data)
   return (
     <div>
-        <Stack direction='row' flexWrap='wrap' justifyContent="start" alignItems="start" gap={2}>
+        <Stack direction='row' flexWrap='wrap'  alignItems="start" gap={2} sx={{justifyContent:{md:'start',xs:'center',sm:'center'}}}>
          
-            {data?.map((item,index)=>{return <>
+            {videos?.map((item,index)=>{return <>
                 <Box key={index} >
                      {item.id.videoId &&<VideoCard video={item} />}
                      {item.id.channelId && <ChannelCard channel={item} />}
@@ -21,7 +21,6 @@ const Videos = () => {
             
             </>})}
         </Stack>
-      
     </div>
   )
 }

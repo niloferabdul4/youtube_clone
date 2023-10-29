@@ -11,14 +11,14 @@ const ChannelCard = ({channel,marginTop}) => {
       <Box sx={{  boxShadow: 'none',   
                   borderRadius:'20px',
                   color:'black',
-                  width: { xs: '200px', md: '200px' },
-                  height: '326px',
+                  height: '256px',
                   margin:'auto',
                   display:'flex',
                   justifyContent:'center',
                   alignItems:'center',
-                  width:{xs:'356px',md:'320px'},
-                  marginTop
+                  width:{xs:'180px',sm:'200px',md:'300px'},
+                  marginTop,
+                  mb:2
                 
   }}>
             <Link to={`/channel/${channel?.id?.channelId}`}>
@@ -29,7 +29,7 @@ const ChannelCard = ({channel,marginTop}) => {
                     <CardMedia
                               image={channel?.snippet?.thumbnails?.default?.url}
                               alt={channel?.snippet?.title}
-                              sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 2, border: '1px solid #e3e3e3' }}
+                              sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 1, border: '1px solid #e3e3e3' }}
                       />
                       <Typography variant="h6">
                         {channel?.snippet?.title}{' '}

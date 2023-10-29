@@ -10,9 +10,10 @@
 html,
 body {
 
-  line-height: 1.5;
+  line-height: 1.6;
   font-family: 'Roboto,Arial,sans-serif';
   font-size: 1.2rem;
+  
 }
 
 a {
@@ -46,7 +47,11 @@ a {
   height: 77vh !important;
   width: 100% !important;
 }
-
+.search-bar{
+  border:none;
+  outline:none;
+  width:350px;
+}
 .menu-btn{
 
   text-transform: capitalize;
@@ -65,30 +70,58 @@ a {
   transition: all 0.3s ease;
 }
 
+
 @media screen and (max-width: 900px) {
   .menu-btn{
-    margin: 10px;
+    margin: 0.5em 0.75em;
+    font-size: 0.9rem;
+    padding:1em 0.85em;
+  }
+  .react-player {
+    height: 60vh !important;
+    width: 100% !important;
   }
   
 }
 
 @media screen and (max-width:800px){
+  .menu-btn{
+    margin: 1px;
+    font-size: 0.8rem;
+    padding:1em 0.85em;
+  }
   .copyright{
     display:none !important;
   }
+  .react-player {
+    height: 60vh !important;
+    width: 100% !important;
+  }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width:350px) and (max-width: 600px) {
+  .menu-btn{
+    margin: 1px;
+    font-size: 0.7rem;
+    padding:1em 0.85em;
+  }
   .scroll-horizontal {
     overflow: auto !important;
+  }
+  .react-player {
+    height: 50vh !important;
+    width: 100% !important;
+  }
+
+  .search-bar{
+    width:200px;
+   
   }
 
   .react-player {
     height: 45vh !important;
   }
-  .search-bar{
-    width:200px;
-  }
+
 }
 
 

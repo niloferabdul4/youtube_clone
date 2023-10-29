@@ -1,8 +1,8 @@
 const reducer=(state,action)=>{
     switch(action.type)
     {
-        case 'LOAD_DATA':
-            return {...state,data:action.payload}
+        case 'LOAD_VIDEOS':
+            return {...state,videos:action.payload}
         case 'LOAD_VIDEO_DETAILS':               
                 return {...state,singleVideoDetails:action.payload}
         case 'LOAD_CHANNEL_DETAILS':               
@@ -14,6 +14,11 @@ const reducer=(state,action)=>{
               return {...state,selectedMenu:action.payload}
         case 'LOAD_RELATED_VIDEOS':
               return {...state,relatedVideos:action.payload}
+        case 'SEARCH_TEXT':
+                return {...state,searchText:action.payload}
+        case 'LOAD_FILTERED_VIDEOS':
+                return {...state,filteredVideos:action.payload}
+      
         default:
             return state
     }

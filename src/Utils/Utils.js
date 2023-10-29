@@ -11,18 +11,18 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 
 export const menuItems = [
-  { name: 'Most Popular', icon: <HomeIcon /> },
+  { name: 'New', icon: <HomeIcon /> },
   { name: "NilasCuisine", icon: <CodeIcon /> },
-  { name: "Bright Side", icon: <CodeIcon />, },
+  { name: 'ReactJS', icon: <CodeIcon />}, 
   { name: 'Html', icon: <CodeIcon /> },
   { name: 'Javascript', icon:<CodeIcon /> },
-  { name: 'ReactJS', icon: <CodeIcon />}, 
+  { name: "NextJS", icon: <CodeIcon />, },
   { name: 'Sports', icon: <SportsEsportsIcon /> },
   { name: 'Music', icon: <MusicNoteIcon />},
   {name:'Entertainment',icon:<LiveTvIcon/>},
   { name: 'Fashion', icon: <CheckroomIcon /> },
-  {name:'Liked Videos',icon:<ThumbUpOffAltOutlinedIcon/>},
-  {name:'Logout',icon:<ExitToAppIcon/>}
+  {name:'Liked Videos',icon:<ThumbUpOffAltOutlinedIcon/>}
+  
 
 ];
 

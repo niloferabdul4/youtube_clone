@@ -9,7 +9,7 @@ const AppContextProvider = ({children}) => {
       channelVideos:[],
       channelDetails:[],
       relatedVideos:[],
-      selectedMenu:'New',
+      selectedMenu:'NextJs',
       searchText:'',
       filteredVideos:[],
     

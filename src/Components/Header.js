@@ -60,7 +60,7 @@ const handleLogout=()=>{
                 
            </Paper>
         </Box>
-        <Box>
+        {user!==null && <Box>
           <Avatar src={user?.photoURL}  onClick={()=>{setShowDropdown(showDropdown=>!showDropdown)}}/>
           {showDropdown && 
               <Box sx={{position:'absolute',top:'58px',border:'0.1px solid grey',backgroundColor:'white',borderRadius: '10px',right:{md:'1.8em',xs:'1.4em'}}}>
@@ -76,6 +76,7 @@ const handleLogout=()=>{
           
           }
         </Box>
+}
   </Stack>
   </>
   )

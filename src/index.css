@@ -64,7 +64,7 @@ li:hover {
 .search-bar{
   border:none;
   outline:none;
-  width:350px;
+  width:370px;
 }
 .menu-btn{
 
@@ -101,6 +101,10 @@ li:hover {
     height: 60vh !important;
     width: 100% !important;
   }
+  .search-bar{
+    width:220px;
+   
+  }
   
 }
 
@@ -122,6 +126,10 @@ li:hover {
   .react-player {
     height: 60vh !important;
     width: 100% !important;
+  }
+  .search-bar{
+    width:200px;
+   
   }
 }
 
@@ -146,7 +154,7 @@ li:hover {
   }
 
   .search-bar{
-    width:200px;
+    width:190px;
    
   }
 li{

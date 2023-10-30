@@ -38,7 +38,7 @@ const handleLogout=()=>{
     <>
  
 
-  <Stack direction='row' alignItems='center' sx={{position:'sticky',px:3,py:2,top:0,justifyContent:'space-between',zIndex:'100',backgroundColor:'whitesmoke'}} >
+  <Stack direction='row' alignItems='center' sx={{position:'sticky',px:2,py:2,top:0,justifyContent:'space-between',zIndex:'100',backgroundColor:'whitesmoke'}} >
        <Box sx={{flexDirection:'row'}}>
            <Avatar src='/assets/logo1.png' alt=''height={40} />
              

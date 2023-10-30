@@ -18,7 +18,9 @@ const reducer=(state,action)=>{
                 return {...state,searchText:action.payload}
         case 'LOAD_FILTERED_VIDEOS':
                 return {...state,filteredVideos:action.payload}
-      
+        case 'SET_USER':
+                        return {...state,user:action.payload}
+              
         default:
             return state
     }

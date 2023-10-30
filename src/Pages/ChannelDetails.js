@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react'
 import { useParams ,Link} from 'react-router-dom'
 import { AppContext } from '../Context/AppContextProvider'
-import { Stack,Box, CardMedia,Card,CardContent,Typography } from '@mui/material'
+import { Box } from '@mui/material'
 import ChannelCard from '../Components/ChannelCard'
 import VideoCard from '../Components/VideoCard'
 import { fetchFromApi } from '../Utils/fetchFromApi'
@@ -34,7 +34,7 @@ const ChannelDetails = () => {
   return (
     <div>
        <Header/>
-        <Box minHeight="95vh" gap={2} >           
+        <Box minHeight="95vh" gap={2.5} >           
               <Box>  
                   <div style={{
                   height:'250px',

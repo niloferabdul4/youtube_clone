@@ -16,9 +16,9 @@ const ChannelCard = ({channel,marginTop}) => {
                   display:'flex',
                   justifyContent:'center',
                   alignItems:'center',
-                  width:{xs:'180px',sm:'200px',md:'300px'},
+                  width:{xs:'160px',sm:'180px',md:'240px'},
                   marginTop,
-                  mb:2
+                  mb:1
                 
   }}>
             <Link to={`/channel/${channel?.id?.channelId}`}>
@@ -29,11 +29,11 @@ const ChannelCard = ({channel,marginTop}) => {
                     <CardMedia
                               image={channel?.snippet?.thumbnails?.default?.url}
                               alt={channel?.snippet?.title}
-                              sx={{ borderRadius: '50%', height: '180px', width: '180px', mb: 1, border: '1px solid #e3e3e3' }}
+                              sx={{ borderRadius: '50%', height: '160px', width: '160px', mb: 1, border: '1px solid #e3e3e3' }}
                       />
                       <Typography variant="h6">
                         {channel?.snippet?.title}{' '}
-                        <CheckCircle sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
+                        <CheckCircle sx={{ fontSize: "14px", color: "gray", ml: "5px" }} />
                       </Typography>
                       {channel?.statistics?.subscriberCount && (
                         <Typography variant='body2' sx={{ fontSize: '15px', fontWeight: 500, color: 'black' }}>

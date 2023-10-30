@@ -2,14 +2,16 @@ import React,{useContext,useEffect} from 'react'
 import { Stack } from '@mui/material';
 import { AppContext } from '../Context/AppContextProvider';
 import { menuItems } from '../Utils/Utils';
+import { useNavigate } from 'react-router-dom';
 
 const Sidebar = () => {
-
   
   const {state:{selectedMenu},dispatch}=useContext(AppContext)
+  const navigate=useNavigate()
 
   const handleClick=(item)=>{
    dispatch({type:'SELECT_MENU',payload:item.name})
+   navigate('/')
   }
 
 
@@ -25,7 +27,7 @@ const Sidebar = () => {
                                             onClick={()=>handleClick(item)}
                                             >
                                       
-                                            <span style={{marginRight:'8px'}}>{item.icon}</span>
+                                            <span className='menu_icon'>{item.icon}</span>
                                             <p style={{opacity:item.name===selectedMenu ? '1' :'0.75'}}>{item.name}</p>
                                         
                                         </button>            

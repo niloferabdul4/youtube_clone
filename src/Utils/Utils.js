@@ -16,7 +16,7 @@ export const menuItems = [
   { name: 'ReactJS', icon: <CodeIcon />}, 
   { name: 'Html', icon: <CodeIcon /> },
   { name: 'Javascript', icon:<CodeIcon /> },
-  { name: "NextJS", icon: <CodeIcon />, },
+  { name: "NextJS", icon: <CodeIcon /> },
   { name: 'Sports', icon: <SportsEsportsIcon /> },
   { name: 'Music', icon: <MusicNoteIcon />},
   {name:'Entertainment',icon:<LiveTvIcon/>},

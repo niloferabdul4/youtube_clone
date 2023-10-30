@@ -18,14 +18,14 @@ const RelatedVideos = ({id}) => {
                 {relatedVideos?.map(item=>{return <> 
                             
                          <Link to={`/videos/${item.id.videoId}`}>
-                         <Stack direction='row' sx={{px:{sm:2,xs:2},py:{sm:2.5,xs:2.5}}}>    
-                          <CardMedia sx={{height:140, width:200,mr:3,mt:3}} image={item?.snippet?.thumbnails.default.url} alt='' />                          
-                            <CardContent sx={{height:140, width:400,gap:10}} >
-                                    <Typography variant='subHeading2'>
-                                        {item?.snippet?.title?.slice(0,50)}
+                         <Stack direction='row' sx={{px:{sm:2,xs:2},py:{sm:1.5,xs:1.5}}}>    
+                          <CardMedia sx={{height:140, width:300,mr:3,mt:3}} image={item?.snippet?.thumbnails.default.url} alt='' />                          
+                            <CardContent sx={{height:140, width:300,gap:10}} >
+                                    <Typography variant='subHeading2' >
+                                        {item?.snippet?.title?.slice(0,30)}...
                                     </Typography>
                                     <Link to={`/channel/${item.snippet?.channelId}`}>
-                                        <Typography variant='body1'>
+                                        <Typography variant='body2'>
                                             {item?.snippet?.channelTitle}
                                             <CheckCircle sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
                                         </Typography> 

@@ -1,5 +1,8 @@
 import { createContext, useReducer } from "react"
+import { auth } from "../firebase"
 import reducer from "./reducer"
+import { useEffect } from "react"
+import { onAuthStateChanged } from "firebase/auth"
 export const AppContext=createContext()
 
 const AppContextProvider = ({children}) => {
@@ -12,9 +15,19 @@ const AppContextProvider = ({children}) => {
       selectedMenu:'NextJs',
       searchText:'',
       filteredVideos:[],
+      user:null
     
     }
     const [state,dispatch]=useReducer(reducer,initialState)
+
+    useEffect(()=>{
+      const unSub=onAuthStateChanged(auth,(user)=>{
+        dispatch({type:'SET_USER',payload:user})
+      });
+        return ()=>{
+            unSub();
+        }
+    },[])
 
   return (
     <>

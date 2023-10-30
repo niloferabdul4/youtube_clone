@@ -21,8 +21,7 @@ export const menuItems = [
   { name: 'Music', icon: <MusicNoteIcon />},
   {name:'Entertainment',icon:<LiveTvIcon/>},
   { name: 'Fashion', icon: <CheckroomIcon /> },
-  {name:'Liked Videos',icon:<ThumbUpOffAltOutlinedIcon/>}
-  
+ 
 
 ];
 

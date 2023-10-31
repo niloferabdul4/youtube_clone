@@ -19,7 +19,7 @@ const VideoDetails = () => {
   
     useEffect(()=>{
        fetchFromApi(`videos?part=contentDetails%2Csnippet%2Cstatistics&id=${id}`)
-      .then((data)=> dispatch({type:'LOAD_VIDEO_DETAILS',payload:data.items[0]}))
+      .then((items)=> dispatch({type:'LOAD_VIDEO_DETAILS',payload:items[0]}))
        
       .catch(error=>console.log(error.message))
    

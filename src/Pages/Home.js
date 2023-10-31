@@ -5,13 +5,52 @@ import { Stack,Box, Typography} from '@mui/material'
 import Videos from '../Components/Videos'
 import { fetchFromApi } from '../Utils/fetchFromApi'
 import Header from '../Components/Header'
+import { collection,addDoc, getDocs, where } from '@firebase/firestore'
+import { db } from '../firebase'
+
+
 const Home = () => {
   const {state:{selectedMenu,searchText},dispatch}=useContext(AppContext)  
- 
+ /*
    useEffect(()=>{ 
                 fetchFromApi(`search?part=snippet&q=${selectedMenu}`)              
                .then((data)=> dispatch({type:'LOAD_VIDEOS',payload:data.items}))                               
 },[selectedMenu])
+
+*/
+useEffect(()=>{ 
+  const videoCollection=collection(db,'videos') 
+  const addDataToFirestore=async()=>
+  {
+        try{      
+          await fetchFromApi(`search?part=snippet&q=${selectedMenu}`)          
+        .then((items)=> { items.map(item=>{addDoc(videoCollection,item)})
+                          fetchDataFromFirestore(items) 
+              })     
+          }
+        catch(error) {
+          console.error(error)
+    }
+  }
+ 
+  const fetchDataFromFirestore=async(items)=>{    
+        try{
+      
+          dispatch({type:'LOAD_VIDEOS',payload:items}) 
+          console.log(items)
+          }
+          catch(error)
+          {
+            console.error('Error Fetching Videos',error)
+          }
+    }
+
+  addDataToFirestore()  
+    
+}
+
+,[selectedMenu])
+
 
   return (
     <div>

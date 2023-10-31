@@ -9,7 +9,7 @@ const RelatedVideos = ({id}) => {
     useEffect(()=>{
         
         fetchFromApi(`search?relatedToVideoId=${id}&part=id%2Csnippet&type=video&maxResults=10`)
-        .then((data)=>dispatch({type:'LOAD_RELATED_VIDEOS',payload:data.items}))
+        .then((items)=>dispatch({type:'LOAD_RELATED_VIDEOS',payload:items}))
     },[id])
     //console.log(relatedVideos)
   return (

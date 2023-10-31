@@ -16,7 +16,7 @@ const navigate=useNavigate()
     if(searchText)
     {
     fetchFromApi(`search?part=snippet&q=${searchText}`) 
-   .then((data)=>dispatch({type:'LOAD_FILTERED_VIDEOS',payload:data.items}))
+   .then((items)=>dispatch({type:'LOAD_FILTERED_VIDEOS',payload:items}))
     navigate(`/filteredVideos/${searchText}`)
   
     }

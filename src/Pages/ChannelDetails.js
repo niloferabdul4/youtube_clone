@@ -25,10 +25,10 @@ const ChannelDetails = () => {
 
    useEffect(()=>{
     fetchFromApi(`channels?part=snippet%2Cstatistics&id=${id}`)
-    .then((data)=>dispatch({type:'LOAD_CHANNEL_DETAILS',payload:data.items[0]}))
+    .then((items)=>dispatch({type:'LOAD_CHANNEL_DETAILS',payload:items[0]}))
 
     fetchFromApi(`search?channelId=${id}&part=snippet%2Cid&order=date&maxResults=50`)
-    .then((data)=>dispatch({type:'LOAD_CHANNEL_VIDEOS',payload:data.items}))
+    .then((items)=>dispatch({type:'LOAD_CHANNEL_VIDEOS',payload:items}))
    },[id])
 
   return (

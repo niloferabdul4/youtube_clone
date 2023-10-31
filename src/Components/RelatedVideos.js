@@ -10,8 +10,9 @@ const RelatedVideos = ({id}) => {
         
         fetchFromApi(`search?relatedToVideoId=${id}&part=id%2Csnippet&type=video&maxResults=10`)
         .then((items)=>dispatch({type:'LOAD_RELATED_VIDEOS',payload:items}))
+        window.scrollTo({top:0,left:0,behavior:'smooth'})
     },[id])
-    //console.log(relatedVideos)
+    
   return (
     <div>   
              

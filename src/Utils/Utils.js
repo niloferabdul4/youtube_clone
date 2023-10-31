@@ -4,10 +4,6 @@ import CodeIcon from '@mui/icons-material/Code';
 import SportsEsportsIcon from '@mui/icons-material/SportsEsports';
 import LiveTvIcon from '@mui/icons-material/LiveTv';
 import CheckroomIcon from '@mui/icons-material/Checkroom';
-import JavascriptIcon from '@mui/icons-material/Javascript';
-import ThumbUpOffAltOutlinedIcon from '@mui/icons-material/ThumbUpOffAltOutlined';
-import ExitToAppIcon from '@mui/icons-material/ExitToApp';
-
 
 
 export const menuItems = [

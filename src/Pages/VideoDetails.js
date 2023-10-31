@@ -12,9 +12,8 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 const VideoDetails = () => {
     const{state:{singleVideoDetails},dispatch}=useContext(AppContext)
     const [expand,setExpand]=useState(false)
-    const [liked,setLiked]=useState(false)
     const {id}=useParams()
-
+    const [liked,setLiked]=useState(false)
     //https://youtube-v31.p.rapidapi.com/videos?part=contentDetails%2Csnippet%2Cstatistics&id=7ghhRHRP6t4
   
     useEffect(()=>{
@@ -25,11 +24,10 @@ const VideoDetails = () => {
    
     },[id])
     
-    const handleLike=async()=>
-    {
-      setLiked(liked=>!liked)
-    }
-    
+const handleLike=()=>{
+  setLiked(liked=>!liked)
+}
+
 console.log(singleVideoDetails)
   return (
     <>
@@ -57,7 +55,7 @@ console.log(singleVideoDetails)
                         </Typography>
                         <Typography variant="subTitle2" sx={{ opacity: 0.7,display:'flex', alignItems:'center' }}>
                           {liked? (<ThumbUpIcon onClick={handleLike}  style={{marginRight:'4px' ,color:'blue'}}/> ): (<ThumbUpAltOutlinedIcon  onClick={handleLike} style={{marginRight:'4px'}}/>)}
-                          {parseInt(singleVideoDetails?.statistics?.likeCount).toLocaleString()} likes
+                          {parseInt(singleVideoDetails?.statistics?.likeCount).toLocaleString()}likes
                         </Typography>
                        </Stack>
                   </Stack>

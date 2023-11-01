@@ -27,7 +27,7 @@ const Home = () => {
               <Sidebar/>
             </Box>
             <Box  sx={{height:{sx:'auto',md:'92vh'},p:{sx:3,sm:3,md:6}, overflowY:'auto',flex:'2'}}>
-              <Typography variant='h6' fontWeight='bold' py={3} px={1}>
+              <Typography variant='h6'  py={3} px={1}>
                {selectedMenu.toUpperCase()} <span>Videos</span>
               </Typography> 
               <Videos />             

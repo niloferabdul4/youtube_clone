@@ -10,7 +10,7 @@ import { db } from '../firebase'
 
 
 const Home = () => {
-  const {state:{selectedMenu,searchText},dispatch}=useContext(AppContext)  
+  const {state:{selectedMenu},dispatch}=useContext(AppContext)  
  
    useEffect(()=>{ 
                 fetchFromApi(`search?part=snippet&q=${selectedMenu}`)              

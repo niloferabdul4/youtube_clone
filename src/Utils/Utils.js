@@ -21,9 +21,9 @@ export const menuItems = [
 
 ];
 
-export const demoThumbnail = '../../public/demoThumbnail.jpg'
+export const demoThumbnail = 'https://i.ytimg.com/vi/4-Yv4PzseHU/hqdefault.jpg'
 export const demoChannelUrl = '/channel/UCOE7gG5Xnxd_kEkcn78YB2A';
-export const demoVideoUrl = '/video/4-Yv4PzseHU';
+export const demoVideoUrl = '/videos/4-Yv4PzseHU';
 export const demoChannelTitle = 'Nilas Cuisine';
 export const demoVideoTitle = "10 REFRESHING WELCOME DRINKS / Iftar Special / NILA'S CUISINE";
 export const demoProfilePicture = 'https://yt3.googleusercontent.com/ytc/APkrFKZ7egsDcPMioDUZ094fIn_P-ApyQtlsm1_tGUOT=s900-c-k-c0x00ffffff-no-rj'

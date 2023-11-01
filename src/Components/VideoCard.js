@@ -7,25 +7,25 @@ const VideoCard = ({video:{id,snippet}}) => {
 
   return (
     <div>
-      <Card  sx={{ width: { xs: '340px', sm: '378px', md: "320px", }, boxShadow: "none" , flexWrap:'wrap'}}>
+      <Card  sx={{ width: { xs: '368px', sm: '368px', md: "320px", }, boxShadow: "none" ,borderRadius:0}}>
             <Link to={id.videoId? ( `/videos/${id.videoId}`) : (`/videos/4-Yv4PzseHU?si=SAnN_yVqU8pItNyz`)} >
-            <CardMedia sx={{ width: { xs: '340px', sm: '358px'}, height: 200 }} 
+            <CardMedia sx={{ width: { xs: '368px', sm: '368px'}, height: 180 }} 
                             component="img"
                             alt={`${snippet?.title}`}                           
-                            image={id.videoId? (snippet?.thumbnails?.high?.url) : demoThumbnailUrl  } 
+                            image={snippet?.thumbnails?.high?.url || demoThumbnailUrl  } 
             />
             </Link>
 
-            <CardContent sx={{height:130}}>
+            <CardContent sx={{height:120 ,display:'flex',flexDirection:'column',alignItems:'flex-start',px:0}}>
                <Link to={ id.videoId? (`/videos/${id.videoId}`): demoVideoUrl} >
-                    <Typography variant='subHeading' component='div' >
-                    {String(snippet?.title.slice(0,80)) || demoVideoTitle}
+                    <Typography variant='subTitle1' >
+                    {snippet?.title.slice(0,50) || demoVideoTitle.slice(0,50)}
                     </Typography>
                 </Link>
                 <Link to={snippet?.channelId? (`/channel/${snippet?.channelId}`):demoChannelUrl}>
-                    <Typography variant="subTitle1" color="#808080" alignItems='center'>
+                    <Typography variant="subTitle2" color="gray" alignItems='center'>
                       {snippet?.channelTitle}
-                      <CheckCircle sx={{ fontSize: "18px", color: "gray", ml: "5px" }} />
+                      <CheckCircle sx={{ fontSize: "14px", color: "gray", ml: "5px" }} />
                     </Typography>
                       
                  </Link>

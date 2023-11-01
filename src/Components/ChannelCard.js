@@ -3,6 +3,7 @@ import React from 'react'
 import { AppContext } from '../Context/AppContextProvider'
 import { Link } from 'react-router-dom'
 import { CheckCircle } from '@mui/icons-material'
+import { demoProfilePicture } from '../Utils/Utils'
 const ChannelCard = ({channel,marginTop}) => {
    //console.log(channel)
 
@@ -11,14 +12,14 @@ const ChannelCard = ({channel,marginTop}) => {
       <Box sx={{  boxShadow: 'none',   
                   borderRadius:'20px',
                   color:'black',
-                  height: '256px',
+                  height: '200px',
                   margin:'auto',
                   display:'flex',
                   justifyContent:'center',
                   alignItems:'center',
-                  width:{xs:'160px',sm:'180px',md:'240px'},
+                  width:{xs:'200px',sm:'250px',md:'320px'},
                   marginTop,
-                  mb:1
+                  
                 
   }}>
             <Link to={`/channel/${channel?.id?.channelId}`}>
@@ -27,9 +28,9 @@ const ChannelCard = ({channel,marginTop}) => {
                                 justifyContent:'center',
                                 textAlign:'center'}}>
                     <CardMedia
-                              image={channel?.snippet?.thumbnails?.default?.url}
+                              image={channel?.snippet?.thumbnails?.default?.url || demoProfilePicture}
                               alt={channel?.snippet?.title}
-                              sx={{ borderRadius: '50%', height: '160px', width: '160px', mb: 1, border: '1px solid #e3e3e3' }}
+                              sx={{ borderRadius: '50%', height: '160px', width: '160px', mb: 2, border: '1px solid #e3e3e3' }}
                       />
                       <Typography variant="h6">
                         {channel?.snippet?.title}{' '}

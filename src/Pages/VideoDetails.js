@@ -76,7 +76,7 @@ console.log(singleVideoDetails)
         </Box>
        
           <Box sx={{flexDirection:'column' ,overflowY:'auto', 
-                                          height:{sx:'auto',md:'96vh'},
+                                          height:{sx:'auto',md:'auto'},
                                           
                                           }}>
             <RelatedVideos id={id}/>

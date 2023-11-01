@@ -23,11 +23,11 @@ const Home = () => {
     <div>
        <Header/>
        <Stack sx={{flexDirection:{sx:'column',md:'row'}}}>
-            <Box sx={{height:{sx:'auto',md:'92vh'},p:{sm:0,sx:0,md:2}}}>
+            <Box sx={{height:{sx:'auto',md:'92vh'},px:{sm:0,sx:0,md:2}}}>
               <Sidebar/>
             </Box>
             <Box  sx={{height:{sx:'auto',md:'92vh'},p:{sx:3,sm:3,md:6}, overflowY:'auto',flex:'2'}}>
-              <Typography variant='h6' fontWeight='bold' py={3} px={2}>
+              <Typography variant='h6' fontWeight='bold' py={3} px={1}>
                {selectedMenu.toUpperCase()} <span>Videos</span>
               </Typography> 
               <Videos />             

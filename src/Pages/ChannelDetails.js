@@ -44,7 +44,7 @@ const ChannelDetails = () => {
                   <ChannelCard channel={channelDetails} marginTop='-125px' />
               </Box>
               <Box p={{xs:2,md:8}}>             
-                  <Box sx={{display:'flex', flexWrap:'wrap',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:'38px',height:{sx:'auto',md:'95vh'}}} >
+                  <Box sx={{display:'flex', flexWrap:'wrap',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:'45px',height:{sx:'auto',md:'95vh'}}} >
                       {channelVideos?.map(video=>{return <>                  
                         <VideoCard video={video} />
                     

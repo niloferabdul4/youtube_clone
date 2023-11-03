@@ -8,6 +8,7 @@ import { fetchFromApi } from '../Utils/fetchFromApi'
 import { CheckCircle } from '@mui/icons-material'
 import ThumbUpAltOutlinedIcon from '@mui/icons-material/ThumbUpAltOutlined';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import Header from '../Components/Header'
 
 const VideoDetails = () => {
     const{state:{singleVideoDetails},dispatch}=useContext(AppContext)
@@ -31,6 +32,7 @@ const handleLike=()=>{
 console.log(singleVideoDetails)
   return (
     <>
+     <Header/>
       <Box minHeight='95vh'>
        <Stack sx={{flexDirection:{sx:'column-reverse',md:'row'},p:{sm:0.5,md:10},textAlign:'justify'}}>
         <Box sx={{flex:'1' ,pr:{md:15}}}>

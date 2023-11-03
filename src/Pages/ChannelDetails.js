@@ -33,18 +33,18 @@ const ChannelDetails = () => {
 
   return (
     <div>
-       <Header/>
+    
         <Box minHeight="95vh" gap={2.5} >           
               <Box>  
                   <div style={{
-                  height:'300px',
+                  height:'250px',
                   background: 'linear-gradient(90deg, rgba(0,238,247,1) 0%, rgba(206,3,184,1) 100%, rgba(0,212,255,1) 100%)',
                   zIndex: 10,
                 }} />                
-                  <ChannelCard channel={channelDetails} marginTop='-125px' />
+                  <ChannelCard channel={channelDetails} marginTop='-90px' />
               </Box>
-              <Box p={{xs:2,md:8}}>             
-                  <Box sx={{display:'flex', flexWrap:'wrap',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:'45px',height:{sx:'auto',md:'95vh'}}} >
+              <Box p={{xs:4,md:10}}>             
+                  <Box sx={{display:'flex', flexWrap:'wrap',flexDirection:'row',alignItems:'center',justifyContent:'center',gap:'50px',height:{sx:'auto',md:'95vh'}}} >
                       {channelVideos?.map(video=>{return <>                  
                         <VideoCard video={video} />
                     

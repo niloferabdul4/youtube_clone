@@ -4,6 +4,7 @@ import ChannelDetails from './Pages/ChannelDetails';
 import Home from './Pages/Home';
 import FilteredVideos from './Pages/FilteredVideos';
 import Login from './Pages/Login';
+import Header from './Components/Header';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   return ( 
    
     <div className="App">
+      <Header/>
       <Routes>
          <Route path='/login' element={<Login />} />
          <Route path='/' element={<Home/>} />

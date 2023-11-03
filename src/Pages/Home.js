@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <div>
-       <Header/>
+    
        <Stack sx={{flexDirection:{sx:'column',md:'row'}}}>
             <Box sx={{height:{sx:'auto',md:'92vh'},px:{sm:0,sx:0,md:2}}}>
               <Sidebar/>

@@ -10,7 +10,8 @@ import { auth } from '../firebase';
 const Header = () => {
   const {state:{searchText,user},dispatch}=useContext(AppContext)
   const [showDropdown,setShowDropdown]=useState(false)
-const navigate=useNavigate()
+  const navigate=useNavigate()
+
   const handleSubmit=(event)=>{
     event.preventDefault();
     if(searchText)
@@ -40,7 +41,7 @@ const handleLogout=()=>{
 
   <Stack direction='row' alignItems='center' sx={{position:'sticky',px:2,py:2,top:0,justifyContent:'space-between',zIndex:'100',backgroundColor:'whitesmoke'}} >
        <Box sx={{flexDirection:'row'}}>
-           <Avatar src='/assets/logo1.png' alt=''height={40} />
+           <Avatar src='/assets/logo1.png' alt=''height={40} onClick={()=>navigate('/')} />
              
        </Box>
        <Box >

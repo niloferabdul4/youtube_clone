@@ -11,7 +11,7 @@ const Videos = () => {
 
   return (
     <div>
-        <Stack direction='row' flexWrap='wrap'  alignItems="start" gap={4} sx={{justifyContent:{md:'start',xs:'center',sm:'center'}}}>
+        <Stack direction='row' flexWrap='wrap'  alignItems="start" gap={3} sx={{justifyContent:{md:'start',xs:'center',sm:'center'}}}>
             {videos?.map((item,index)=>{return <>
                 <Box key={index} >
                      {item.id.videoId &&<VideoCard video={item} />}

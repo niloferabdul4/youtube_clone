@@ -12,7 +12,7 @@ const FilteredVideos = () => {
  //console.log(data)
   return (
     <div>
-         <Header/>
+       
        <Stack sx={{flexDirection:{sx:'column',md:'row'}}}>
             <Box sx={{height:{sx:'auto',md:'92vh'},p:{sm:0,sx:0,md:2}}}>
               <Sidebar/>
